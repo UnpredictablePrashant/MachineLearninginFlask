@@ -15,6 +15,7 @@ def ValuePredictor(to_predict_list):
 @app.route('/')
 def index():
     return render_template('index.html')
+    
 @app.route('/result', methods = ['POST'])
 def result():   
     if request.method == 'POST':

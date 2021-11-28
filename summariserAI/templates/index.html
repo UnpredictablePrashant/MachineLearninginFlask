@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Summariser AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+ 
+
+    <style>
+        div#loading {
+            width: 35px;
+            height: 35px;
+            display: none;
+            background: url(/static/img/loadingFunny.gif) no-repeat;
+            cursor: wait;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="loading"></div>
+    <div id="content" class="content">
+        <form action="/results" method="POST" target="_blank">
+            <textarea name="review_text" placeholder="Enter the text" rows="10" cols="15"></textarea>
+            <input type="submit" value="Submit" onclick="loading();">
+        </form>
+    </div>
+
+
+    <script>
+        function loading() {
+            $("#loading").show();
+            $("#content").hide();
+        }
+    </script>
+
+    
+
+</body>
+
+</html>
